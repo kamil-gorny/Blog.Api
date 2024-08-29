@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Infrastructure.Persistance;
 
-internal class BlogDbContext(DbContextOptions<BlogDbContext> options) : DbContext(options)
+public class BlogDbContext(DbContextOptions<BlogDbContext> options) : DbContext(options)
 {
     internal DbSet<Post> Posts { get; set; }
     internal DbSet<Comment> Comments { get; set; }
