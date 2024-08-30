@@ -1,3 +1,4 @@
+using Blog.Application.DataModel;
 using Blog.Domain.Entities;
 using Blog.Domain.Repositories;
 
@@ -21,8 +22,15 @@ public class PostService
         return await _postRepository.GetAll();
     }
     
-    public async Task<Guid> CreatePost(Post post)
+    public async Task<Guid> CreatePost(PostServiceRequest postRequest)
     {
+        var post = new Post
+        {
+            Id = new Guid(),
+            Title = postRequest.Title,
+            Content = postRequest.Content,
+            CreationDate = postRequest.CreationDate
+        };
         return await _postRepository.Create(post);
     }
     
