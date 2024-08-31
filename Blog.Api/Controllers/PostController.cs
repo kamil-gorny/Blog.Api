@@ -33,7 +33,7 @@ public class PostController : ControllerBase
     
     public async Task<IActionResult> CreatePost(CreatePostRequest postRequest)
     {
-        var post = new PostServiceRequest()
+        var post = new CreatePostServiceRequest()
         {
             Title = postRequest.Title,
             Content = postRequest.Content,

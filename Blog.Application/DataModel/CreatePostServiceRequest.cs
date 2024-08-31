@@ -1,6 +1,6 @@
 namespace Blog.Application.DataModel;
 
-public class PostServiceRequest
+public class CreatePostServiceRequest
 {
     public required string Title { get; set; }
     public required string Content { get; set; }
