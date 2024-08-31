@@ -4,7 +4,7 @@ using Blog.Domain.Repositories;
 
 namespace Blog.Application.Services;
 
-public class PostService
+public class PostService : IPostService
 {
     private readonly IPostRepository _postRepository;
     public PostService(IPostRepository postRepository)
@@ -35,4 +35,11 @@ public class PostService
     }
     
     
+}
+
+public interface IPostService
+{
+    Task<Post?> GetPost(Guid id);
+    Task<IEnumerable<Post>> GetPosts();
+    Task<Guid> CreatePost(PostServiceRequest postRequest);
 }
