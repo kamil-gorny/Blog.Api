@@ -4,7 +4,7 @@ namespace Blog.Domain.Repositories;
 
 public interface ICommentRepository
 {
-    Task<Comment?> GetById(Guid id);
-    Task<IEnumerable<Comment>> GetAll();
-    Task<Guid> Create(Comment post);
+    Task<Comment?> GetByIdAsync(Guid id);
+    Task<IEnumerable<Comment>> GetAllAsync();
+    Task<Guid> CreateAsync(Comment post);
 }
