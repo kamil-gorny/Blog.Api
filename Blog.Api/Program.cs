@@ -1,3 +1,4 @@
+using Blog.Api.Controllers;
 using Blog.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.AddPostEndpoints();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
