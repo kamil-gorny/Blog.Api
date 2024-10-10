@@ -1,9 +1,8 @@
-using Blog.Api.DataModel;
-using Blog.Application.DataModel;
-using Blog.Application.Services;
+using Application.DataModel;
+using Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Blog.Api.Controllers;
+namespace Application.Controllers;
 
 
 public static class PostModule

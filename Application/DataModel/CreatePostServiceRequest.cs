@@ -1,4 +1,4 @@
-namespace Blog.Application.DataModel;
+namespace Application.DataModel;
 
 public class CreatePostServiceRequest
 {

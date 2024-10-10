@@ -1,4 +1,4 @@
-using Blog.Api.Controllers;
+using Application.Controllers;
 using Blog.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

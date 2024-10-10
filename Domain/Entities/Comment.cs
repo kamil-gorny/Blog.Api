@@ -1,4 +1,4 @@
-namespace Blog.Domain.Entities;
+namespace Domain.Entities;
 
 public class Comment
 {

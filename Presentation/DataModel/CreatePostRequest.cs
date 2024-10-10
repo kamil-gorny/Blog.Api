@@ -1,4 +1,4 @@
-namespace Blog.Api.DataModel;
+namespace Application.DataModel;
 
 public class CreatePostRequest
 {

@@ -1,8 +1,8 @@
-using Blog.Application.DataModel;
-using Blog.Domain.Entities;
-using Blog.Domain.Repositories;
+using Application.DataModel;
+using Domain.Entities;
+using Domain.Repositories;
 
-namespace Blog.Application.Services;
+namespace Application.Services;
 
 public class PostService : IPostService
 {

@@ -1,5 +1,5 @@
-using Blog.Domain.Entities;
-using Blog.Domain.Repositories;
+using Domain.Entities;
+using Domain.Repositories;
 using Blog.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 

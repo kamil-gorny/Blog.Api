@@ -1,4 +1,4 @@
-using Blog.Domain.Entities;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Infrastructure.Persistance;

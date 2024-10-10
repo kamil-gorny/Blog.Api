@@ -1,6 +1,6 @@
-using Blog.Domain.Entities;
+using Domain.Entities;
 
-namespace Blog.Domain.Repositories;
+namespace Domain.Repositories;
 
 public interface ICommentRepository
 {

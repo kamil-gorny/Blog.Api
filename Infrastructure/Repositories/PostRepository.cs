@@ -1,5 +1,5 @@
-using Blog.Domain.Entities;
-using Blog.Domain.Repositories;
+using Domain.Entities;
+using Domain.Repositories;
 using Blog.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,18 +14,18 @@ public class PostRepository : IPostRepository
         _dbContext = dbContext;
     }
 
-    public Task<Post?> GetById(Guid id)
+    public Task<Post?> GetByIdAsync(Guid id)
     { 
         return _dbContext.Posts.Include(p => p.Comments).FirstOrDefaultAsync(p => p.Id == id);
     }
 
-    public async Task<IEnumerable<Post>> GetAll()
+    public async Task<IEnumerable<Post>> GetAllAsync()
     {
         var posts= await _dbContext.Posts.ToListAsync();
         return posts;
     }
 
-    public async Task<Guid> Create(Post post)
+    public async Task<Guid> CreateAsync(Post post)
     {
         await _dbContext.Posts.AddAsync(post);
         await _dbContext.SaveChangesAsync();
