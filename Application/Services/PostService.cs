@@ -14,12 +14,12 @@ public class PostService : IPostService
     
     public async Task<Post?> GetPost(Guid id)
     {
-        return await _postRepository.GetById(id);
+        return await _postRepository.GetByIdAsync(id);
     }
     
     public async Task<IEnumerable<Post>> GetPosts()
     {
-        return await _postRepository.GetAll();
+        return await _postRepository.GetAllAsync();
     }
     
     public async Task<Guid> CreatePost(CreatePostServiceRequest createPostRequest)
@@ -31,7 +31,7 @@ public class PostService : IPostService
             Content = createPostRequest.Content,
             CreationDate = createPostRequest.CreationDate
         };
-        return await _postRepository.Create(post);
+        return await _postRepository.CreateAsync(post);
     }
     
     

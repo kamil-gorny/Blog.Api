@@ -16,7 +16,7 @@ public class PostRepository : IPostRepository
 
     public Task<Post?> GetByIdAsync(Guid id)
     { 
-        return _dbContext.Posts.Include(p => p.Comments).FirstOrDefaultAsync(p => p.Id == id);
+        return _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public async Task<IEnumerable<Post>> GetAllAsync()
