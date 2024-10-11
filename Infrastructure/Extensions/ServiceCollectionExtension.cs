@@ -1,5 +1,5 @@
-using Blog.Infrastructure.Persistance;
-using Microsoft.EntityFrameworkCore;
+using Blog.Infrastructure.Repositories;
+using Domain.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,9 +9,6 @@ public static class ServiceCollectionExtension
 {
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<BlogDbContext>(options =>
-        {
-            options.UseNpgsql(configuration.GetConnectionString("BlogDb"));
-        });
+       services.AddSingleton<IPostRepository, PostRepository>();
     }
 }

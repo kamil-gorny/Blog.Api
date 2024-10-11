@@ -1,4 +1,5 @@
 using Application.Controllers;
+using Application.Extensions;
 using Blog.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddApplication();
+;
 var app = builder.Build();
 app.AddPostEndpoints();
 
