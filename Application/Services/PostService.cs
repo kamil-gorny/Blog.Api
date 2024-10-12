@@ -1,4 +1,5 @@
 using Application.DataModel;
+using Application.Extensions;
 using Domain.Entities;
 using Domain.Repositories;
 
@@ -27,6 +28,7 @@ public class PostService : IPostService
         var post = new Post
         {
             Id = new Guid(),
+            Slug = createPostRequest.Title.ToSlug(),
             Title = createPostRequest.Title,
             Content = createPostRequest.Content,
             CreationDate = createPostRequest.CreationDate
