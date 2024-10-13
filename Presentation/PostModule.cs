@@ -31,7 +31,6 @@ public static class PostModule
             {
                 Title = createPostRequest.Title,
                 Content = createPostRequest.Content,
-                CreationDate = createPostRequest.CreationDate
             };
             var postId = await postService.CreatePost(createPostServiceRequest);
             return Results.Created($"/posts/{postId}", postId);

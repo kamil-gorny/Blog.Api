@@ -31,7 +31,7 @@ public class PostService : IPostService
             Slug = createPostRequest.Title.ToSlug(),
             Title = createPostRequest.Title,
             Content = createPostRequest.Content,
-            CreationDate = createPostRequest.CreationDate
+            CreationDate = DateTime.Now
         };
         return await _postRepository.CreateAsync(post);
     }
