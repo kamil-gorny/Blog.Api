@@ -7,6 +7,6 @@ public static class ServiceCollectionExtension
 {
     public static void AddApplication(this IServiceCollection services)
     {
-        services.AddSingleton<IPostService, PostService>();
+        services.AddScoped<IPostService, PostService>();
     }
 }
