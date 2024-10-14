@@ -14,7 +14,8 @@ public class PostRepository : IPostRepository
     public PostRepository(IConfiguration configuration)
     {
         _configuration = configuration;
-        var client = new MongoClient(_configuration.GetConnectionString("BlogDb"));
+        var connectionString = configuration.GetConnectionString("BlogDb");
+        var client = new MongoClient(connectionString);
         var database = client.GetDatabase("blog");
         _products = database.GetCollection<Post>("posts");
     }
